@@ -20,7 +20,7 @@ pipeline{
     )]){
      sh "docker login -u ${env.dockerhubuser} -p ${env.dockerhubpass}"
      sh "docker image tag flask-my-app ${env.dockerhubuser}/flask-my-app"
-     sh "docker push ${env.dockerhubuser}/flask-my-app:latest
+     sh "docker push ${env.dockerhubuser}/flask-my-app:latest"
     }
    }
   }
