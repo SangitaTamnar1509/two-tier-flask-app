@@ -6,6 +6,11 @@ pipeline{
     git url: "https://github.com/SangitaTamnar1509/two-tier-flask-app.git", branch: "master"
    }
   }
+  stage("security check"){
+   steps{
+    sh "trivy fs . -o results.json"
+   }
+  }
   stage("Build"){
    steps{
     sh "docker build -t flask-my-app ."
